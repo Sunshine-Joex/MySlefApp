@@ -2,6 +2,7 @@ package com.example.mylibrary
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.sunshine.mylibrary.ext.route
 
 /**
  * @author SunShine-Joex
@@ -19,7 +20,10 @@ class RouteServiceImpl : RouteService {
         when {
             url.startsWith("http") -> { //open WebView
             }
-            url.startsWith("/") -> route(url, params) //native page
+            url.startsWith("/") -> route(
+                url,
+                params
+            ) //native page
             else->{
             }
         }

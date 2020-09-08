@@ -1,6 +1,6 @@
 @file:JvmName("DimensionExt")
 
-package com.example.mylibrary
+package com.sunshine.mylibrary.ext
 
 import android.content.Context
 import android.content.res.Resources

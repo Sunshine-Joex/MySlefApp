@@ -1,11 +1,12 @@
 @file:JvmName("RouteExt")
 
-package com.example.mylibrary
+package com.sunshine.mylibrary.ext
 
 import android.content.Context
 import android.text.TextUtils
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
+import com.example.mylibrary.RouteService
 
 /**
  * @author SunShine-Joex
