@@ -3,7 +3,7 @@ package com.sunshine.mylibrary.base
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.bianxianmao.framework.ext.yes
+import com.sunshine.mylibrary.ext.yes
 import com.sunshine.mylibrary.tools.clickSingle
 import org.greenrobot.eventbus.EventBus
 

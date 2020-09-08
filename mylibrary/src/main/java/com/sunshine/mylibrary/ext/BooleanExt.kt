@@ -1,4 +1,4 @@
-package com.bianxianmao.framework.ext
+package com.sunshine.mylibrary.ext
 
 sealed class BooleanExt<out T>
 
