@@ -1,17 +1,10 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import com.example.mylibrary.*
 import com.sunshine.mylibrary.base.BaseActivity
-import com.sunshine.mylibrary.ext.routePage
-import com.sunshine.mylibrary.ext.screenHeight
-import com.sunshine.mylibrary.ext.screenWidth
-import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<MainPresenter>() {
 
 
     override var layoutId: Int = R.layout.activity_main
@@ -21,9 +14,6 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tv_text.text = "$screenWidth--$screenHeight"
-
-        registerClicks(tv_text)
 
 //        cardViewPager.offscreenPageLimit = 3
 //        cardViewPager.adapter = MyPagerAdapter(
@@ -42,10 +32,4 @@ class MainActivity : BaseActivity() {
     }
 
 
-    override fun clickView(view: View?) {
-        super.clickView(view)
-        when (view) {
-            tv_text -> routePage(this, TEST)
-        }
-    }
 }
