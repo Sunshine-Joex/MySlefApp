@@ -1,6 +1,8 @@
 package com.example.myapplication
 
 import com.sunshine.mylibrary.base.BasePresenter
+import com.sunshine.mylibrary.network.commonApi
+import kotlinx.coroutines.launch
 
 /**
  * @author SunShine-Joex
@@ -9,4 +11,10 @@ import com.sunshine.mylibrary.base.BasePresenter
  */
 class MainPresenter : BasePresenter<MainActivity>() {
 
+    fun test() {
+        launch {
+            view?.onSuccess(commonApi.getData())
+        }
+
+    }
 }

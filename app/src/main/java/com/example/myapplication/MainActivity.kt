@@ -1,7 +1,11 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.view.View
 import com.sunshine.mylibrary.base.BaseActivity
+import com.sunshine.mylibrary.bean.HttpResult
+import com.sunshine.mylibrary.network.TextBean
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity<MainPresenter>() {
@@ -13,22 +17,18 @@ class MainActivity : BaseActivity<MainPresenter>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        registerClicks(top)
+    }
 
+    override fun clickView(view: View?) {
+        super.clickView(view)
+        when (view) {
+            top -> presenter.test()
+        }
+    }
 
-//        cardViewPager.offscreenPageLimit = 3
-//        cardViewPager.adapter = MyPagerAdapter(
-//            arrayListOf(
-//                R.mipmap.transformer,
-//                R.mipmap.transformer,
-//                R.mipmap.transformer, R.mipmap.transformer,
-//                R.mipmap.transformer,
-//                R.mipmap.transformer, R.mipmap.transformer,
-//                R.mipmap.transformer,
-//                R.mipmap.transformer
-//            )
-//        )
-//        cardViewPager.pageMargin = 100
-//        cardViewPager.setPageTransformer(true, AlphaAndScalePageTransformer())
+    fun onSuccess(data: HttpResult<MutableList<TextBean>>) {
+        bottom.text = data.data?.get(0)?.name ?: ""
     }
 
 
