@@ -11,7 +11,11 @@ import kotlinx.coroutines.SupervisorJob
 import org.greenrobot.eventbus.EventBus
 import java.lang.reflect.ParameterizedType
 import kotlin.coroutines.CoroutineContext
-
+/**
+ * @author SunShine-Joex
+ * @date   2020-09-15
+ * @desc
+ */
 abstract class BaseActivity<out P : BasePresenter<BaseActivity<P>>> : AppCompatActivity(),
     BaseView<P>, CoroutineScope, View.OnClickListener {
 

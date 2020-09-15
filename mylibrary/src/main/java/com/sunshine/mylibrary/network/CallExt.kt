@@ -5,6 +5,7 @@ package com.sunshine.mylibrary.network
 import android.util.Log
 import android.widget.Toast
 import com.sunshine.mylibrary.bean.HttpResult
+import com.sunshine.mylibrary.ext.showToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import retrofit2.*
@@ -15,7 +16,9 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
 /**
- * Copy Retrofit resource code KotlinExtensions.kt
+ * @author SunShine-Joex
+ * @date   2020-09-15
+ * @desc   Copy Retrofit resource code KotlinExtensions.kt
  */
 suspend fun <T : Any> Call<T>.await(): T {
     return suspendCancellableCoroutine { continuation ->
@@ -58,7 +61,7 @@ suspend fun <T : Any> Call<T>.await(): T {
             }
 
             override fun onFailure(call: Call<T>, t: Throwable) {
-                Log.e("CallExt", t.message)
+                t.message?.let { showToast(it) }
             }
         })
     }

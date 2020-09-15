@@ -1,6 +1,5 @@
 package com.sunshine.mylibrary.network
 
-import com.sunshine.mylibrary.bean.HttpResult
 import retrofit2.*
 import java.io.IOException
 import java.lang.reflect.ParameterizedType
