@@ -3,6 +3,8 @@ package com.example.myapplication
 import com.sunshine.mylibrary.base.BasePresenter
 import com.sunshine.mylibrary.network.commonApi
 import kotlinx.coroutines.launch
+import com.sunshine.mylibrary.network.await
+
 
 /**
  * @author SunShine-Joex
@@ -12,8 +14,9 @@ import kotlinx.coroutines.launch
 class MainPresenter : BasePresenter<MainActivity>() {
 
     fun test() {
-        launch {
-            view?.onSuccess(commonApi.getData())
+        val job = launch {
+            val result = commonApi.getData().await()
+            view?.onSuccess(result)
         }
 
     }

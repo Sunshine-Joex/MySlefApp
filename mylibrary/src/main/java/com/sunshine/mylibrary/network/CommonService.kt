@@ -1,6 +1,7 @@
 package com.sunshine.mylibrary.network
 
 import com.sunshine.mylibrary.bean.HttpResult
+import retrofit2.Call
 import retrofit2.http.GET
 
 /**
@@ -11,5 +12,5 @@ import retrofit2.http.GET
 interface CommonService {
 
     @GET("/wxarticle/chapters/json")
-    suspend fun getData(): HttpResult<MutableList<TextBean>>
+    fun getData(): Call<HttpResult<MutableList<TextBean>>>
 }

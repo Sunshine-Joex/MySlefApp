@@ -40,9 +40,6 @@ val retrofit: Retrofit by lazy {
         .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
-//        .addCallAdapterFactory(
-//            LifecycleCallAdapterFactory(ContextHolder.getContext())
-//        )
         .build()
 }
 
