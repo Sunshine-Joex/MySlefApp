@@ -17,7 +17,7 @@ class MainActivity : BaseActivity<MainPresenter>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        registerClicks(top)
+        registerClicks(top, bottom)
     }
 
     override fun clickView(view: View?) {

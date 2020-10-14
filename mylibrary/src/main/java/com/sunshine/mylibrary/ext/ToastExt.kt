@@ -21,11 +21,7 @@ private var iNotificationManagerObj: Any? = null
 
 fun showToast(toastText: String = "", toastTime: Int = Toast.LENGTH_SHORT) {
     if (toast == null) {
-        toast = if (isNotificationEnabled()) {
-            Toast.makeText(ContextHelper.context, toastText, toastTime)
-        } else {
-            toast?.let { invokeToast(it) }
-        }
+        toast = Toast.makeText(ContextHelper.context, toastText, toastTime)
     }
     toast?.show()
 }

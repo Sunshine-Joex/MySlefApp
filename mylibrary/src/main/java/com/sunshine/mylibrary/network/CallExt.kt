@@ -2,18 +2,11 @@
 
 package com.sunshine.mylibrary.network
 
-import android.util.Log
-import android.widget.Toast
 import com.sunshine.mylibrary.bean.HttpResult
 import com.sunshine.mylibrary.ext.showToast
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import retrofit2.*
-import kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED
-import kotlin.coroutines.intrinsics.intercepted
-import kotlin.coroutines.intrinsics.suspendCoroutineUninterceptedOrReturn
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 
 /**
  * @author SunShine-Joex
@@ -32,6 +25,7 @@ suspend fun <T : Any> Call<T>.await(): T {
                     if (body != null) {
                         val httpResult = body as HttpResult<*>
                         when (httpResult.errorCode) {
+                            0 -> continuation.resume(body)
                             in 200..299 -> continuation.resume(body)
                             401 -> "unauthenticated:${httpResult.errorMsg}"
                             in 400..499 -> "client error:${httpResult.errorMsg}"
@@ -61,7 +55,7 @@ suspend fun <T : Any> Call<T>.await(): T {
             }
 
             override fun onFailure(call: Call<T>, t: Throwable) {
-                t.message?.let { showToast(it) }
+
             }
         })
     }
