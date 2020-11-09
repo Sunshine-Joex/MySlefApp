@@ -8,9 +8,11 @@ import com.sunshine.mylibrary.tools.clickSingle
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancelChildren
 import org.greenrobot.eventbus.EventBus
 import java.lang.reflect.ParameterizedType
 import kotlin.coroutines.CoroutineContext
+
 /**
  * @author SunShine-Joex
  * @date   2020-09-15
@@ -88,5 +90,6 @@ abstract class BaseActivity<out P : BasePresenter<BaseActivity<P>>> : AppCompatA
     override fun onDestroy() {
         super.onDestroy()
         EventBus.getDefault().unregister(this)
+        coroutineContext.cancelChildren()
     }
 }
