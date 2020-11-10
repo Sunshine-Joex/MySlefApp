@@ -1,0 +1,10 @@
+<resources>
+    <!--RV 滑动指示器-->
+    <declare-styleable name="HIndicator">
+        <attr name="hi_bgColor" format="color" />
+        <attr name="hi_indicatorColor" format="color" />
+        <!--进度指示器的长度是否随列表的长度变化，默认bgIndicator 的1/2长度-->
+        <attr name="hi_indicatorLengthChange" format="boolean" />
+    </declare-styleable>
+
+</resources>
