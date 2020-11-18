@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.sunshine.mylibrary.base.BaseActivity
 import com.sunshine.mylibrary.bean.HttpResult
-import com.sunshine.mylibrary.network.TextBean
+import com.sunshine.mylibrary.bean.TextBean
 import kotlinx.android.synthetic.main.activity_main.*
 
 

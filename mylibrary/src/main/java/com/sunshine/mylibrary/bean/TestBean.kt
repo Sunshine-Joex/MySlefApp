@@ -1,4 +1,4 @@
-package com.sunshine.mylibrary.network
+package com.sunshine.mylibrary.bean
 
 /**
  * @author SunShine-Joex
