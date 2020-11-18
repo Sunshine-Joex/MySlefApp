@@ -16,9 +16,7 @@ class MainPresenter : BasePresenter<MainActivity>() {
 
     fun test() {
         val job = launch {
-            val result = commonApi.getData().await()
-            view?.onSuccess(result)
+            view?.onSuccess(commonApi.getData())
         }
-
     }
 }

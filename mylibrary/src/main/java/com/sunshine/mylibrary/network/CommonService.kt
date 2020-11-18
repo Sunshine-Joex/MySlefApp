@@ -12,5 +12,5 @@ import retrofit2.http.GET
 interface CommonService {
 
     @GET("/wxarticle/chapters/json")
-    fun getData(): Call<HttpResult<MutableList<TextBean>>>
+   suspend fun getData(): HttpResult<MutableList<TextBean>>
 }

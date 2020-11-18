@@ -31,6 +31,7 @@ val loggingInterceptor = HttpLoggingInterceptor(logger).setLevel(
 val okHttpClient: OkHttpClient by lazy {
     OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
+        .addInterceptor(NetworkInterceptor())
 //        .addInterceptor(ChuckInterceptor(ContextHolder.getContext()))
         .build()
 }
