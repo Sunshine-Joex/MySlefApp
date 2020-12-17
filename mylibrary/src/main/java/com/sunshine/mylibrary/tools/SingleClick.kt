@@ -1,4 +1,4 @@
-@file:JvmName("SingleClickTool")
+@file:JvmName("ToolSingleClick")
 
 package com.sunshine.mylibrary.tools
 
