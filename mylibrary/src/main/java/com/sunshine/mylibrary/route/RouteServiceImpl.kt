@@ -1,7 +1,8 @@
-package com.example.mylibrary
+package com.sunshine.mylibrary.route
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.sunshine.mylibrary.ROUTE_SERVICE
 import com.sunshine.mylibrary.ext.route
 
 /**

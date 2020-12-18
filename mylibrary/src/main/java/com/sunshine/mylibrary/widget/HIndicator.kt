@@ -1,4 +1,4 @@
-package views
+package com.sunshine.mylibrary.widget
 
 import android.content.Context
 import android.content.res.TypedArray

@@ -1,4 +1,4 @@
-package com.example.mylibrary
+package com.sunshine.mylibrary.route
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.template.IProvider

@@ -3,7 +3,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.example.mylibrary.TEST
+import com.sunshine.mylibrary.TEST
 
 @Route(path = TEST)
 class RouteActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.mylibrary
+package com.sunshine.mylibrary
 
 /**
  * @author SunShine-Joex
